@@ -193,5 +193,3 @@ Lệnh test chạy trên HOST
 ```text
 cd ~/Qt6Cross_Bookworm_651/test_qt_arm64 && \
 ./build_and_run_pi.sh
-
-```text
