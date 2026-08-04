@@ -190,6 +190,41 @@ SCP sang Raspberry Pi
 Raspberry Pi chạy bằng Qt tại /usr/local/qt6
 ```
 Lệnh test chạy trên HOST
-```text
 cd ~/Qt6Cross_Bookworm_651/test_qt_arm64 && \
 ./build_and_run_pi.sh
+
+Lệnh này sẽ tự động:
+
+1. Build chương trình Qt trên Host Ubuntu.
+2. Kiểm tra file đầu ra là ARM aarch64.
+3. Dừng chương trình test cũ trên Raspberry Pi.
+4. Chép chương trình mới sang Raspberry Pi.
+5. Thiết lập thư viện Qt 6.5.1 và GCC 12.
+6. Chạy chương trình trên Raspberry Pi.
+7. Hiển thị giao diện Qt trên màn hình Raspberry Pi.
+
+Kết quả đúng trên Host có dạng:
+
+===== 1. BUILD TREN HOST =====
+ninja: no work to do.
+
+===== 2. KIEM TRA FILE ARM64 =====
+ELF 64-bit LSB executable, ARM aarch64
+
+===== 3. CHEP SANG RASPBERRY PI =====
+100%
+
+===== 4. CHAY TREN MAN HINH RASPBERRY PI =====
+/home/pi/test_qt_arm64
+
+Trên màn hình Raspberry Pi phải xuất hiện cửa sổ:
+
+Qt 6.5.1 cross-compile ARM64 OK
+
+Đây là lệnh test hoàn chỉnh để xác nhận:
+
+Host Ubuntu build thành công
+→ chương trình ARM64 được tạo
+→ chương trình được chép sang Pi
+→ Pi chạy đúng Qt 6.5.1
+→ giao diện hiển thị trên màn hình Pi
